@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zebpay.demo.sumeet.chawla">
+
+    <!-- Permission to check network state, to determine net available or not -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Permissions for using net -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".views.DetailActivity" />
+        <activity android:name=".views.SettingsActivity" />
+
+        <!-- Service -->
+        <service
+            android:name=".services.ScheduleJobService"
+            android:exported="true"
+            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+            </intent-filter>
+        </service>
+
+
+        <!--<activity android:name=".HomeActivity">
+
+        </activity>-->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="7e0c18d935c6380a9b2c611e906e562510cab5b6" />
+    </application>
+
+</manifest>

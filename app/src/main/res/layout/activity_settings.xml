@@ -1,0 +1,83 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="SettingsBinding" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/scale_50dp"
+        android:gravity="center_horizontal">
+
+        <!--<EditText
+            android:id="@+id/ed_value"
+            android:layout_width="@dimen/scale_200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_value" />
+
+        <EditText
+            android:id="@+id/ed_percentage"
+            android:layout_width="@dimen/scale_200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ed_value"
+            android:hint="@string/enter_percentage" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ed_percentage"
+            android:text="@string/save" />-->
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/scale_20dp"
+            android:layout_marginRight="@dimen/scale_20dp"
+            android:layout_marginTop="@dimen/scale_30dp"
+            android:theme="@style/InputTextBox"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/et_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_value"
+                android:inputType="number"
+                android:textColor="@color/colorAccent" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_percentage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_value"
+            android:layout_marginLeft="@dimen/scale_20dp"
+            android:layout_marginRight="@dimen/scale_20dp"
+            android:theme="@style/InputTextBox"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/et_percentage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_percentage"
+                android:inputType="number"
+                android:textColor="@color/colorAccent" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_percentage"
+            android:layout_centerHorizontal="true"
+            android:onClick="saveInPreferences"
+            android:text="@string/save" />
+
+    </RelativeLayout>
+</layout>

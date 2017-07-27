@@ -1,0 +1,17 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="SplashBinding" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="@dimen/scale_200dp"
+            android:layout_height="@dimen/scale_200dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/zebpay_logo_new" />
+
+    </RelativeLayout>
+</layout>

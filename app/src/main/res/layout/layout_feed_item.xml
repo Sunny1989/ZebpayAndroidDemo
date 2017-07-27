@@ -1,0 +1,86 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="FeedItemBinding">
+
+        <variable
+            name="feedItems"
+            type="com.zebpay.demo.sumeet.chawla.pojos.ActivityFeed" />
+
+        <variable
+            name="feedAdapter"
+            type="com.zebpay.demo.sumeet.chawla.adapters.FeedAdapter" />
+
+        <import type="com.zebpay.demo.sumeet.chawla.utility.Utils" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/scale_100dp"
+        android:minHeight="@dimen/scale_80dp"
+        android:onClick="@{feedAdapter.openDetailActivity}">
+
+        <RelativeLayout
+            android:id="@+id/rl_image"
+            android:layout_width="@dimen/scale_50dp"
+            android:layout_height="@dimen/scale_50dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/iv_avatar_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:minHeight="@dimen/scale_50dp"
+                android:minWidth="@dimen/scale_50dp" />
+
+
+            <com.zebpay.demo.sumeet.chawla.volley.RoundedNetworkImageView
+                android:id="@+id/riv_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:minHeight="@dimen/scale_50dp"
+                android:minWidth="@dimen/scale_50dp" />
+        </RelativeLayout>
+        <!--app:imgUrl="@{feedItems.SourceImageUrl}"-->
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/scale_15dp"
+            android:layout_marginTop="@dimen/scale_20dp"
+            android:layout_toRightOf="@id/rl_image"
+            android:maxWidth="@dimen/scale_150dp"
+            android:text="@{feedItems.Title}"
+            android:textSize="@dimen/txt_16sp" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_marginLeft="@dimen/scale_15dp"
+            android:layout_marginTop="@dimen/scale_3dp"
+            android:layout_toRightOf="@id/rl_image"
+            android:gravity="center"
+            android:text="@{feedItems.Description}"
+            android:textColor="@color/colorNormalGrey"
+            android:textSize="@dimen/txt_14sp" />
+
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/scale_30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/scale_10dp"
+            android:text="@{Utils.getTimeInAgo(feedItems.Time)}"
+            android:textColor="@color/colorNormalGrey" />
+
+    </RelativeLayout>
+</layout>
